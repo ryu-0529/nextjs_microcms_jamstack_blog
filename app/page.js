@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link"; // Linkをインポート
+import Link from "next/link";
 import styles from "./styles/page.module.scss";
 import { createClient } from 'microcms-js-sdk';
 
@@ -15,10 +15,10 @@ async function Home() {
   
   return (
     <div>
-      <ul>
+      <ul className={styles.LinkList}>
         {data.contents.map((post) => (
-          <li key={post.id}>
-            <Link href={`/blog/${post.id}`}>
+          <li key={post.id} className={styles.listItem}>
+            <Link href={`/blog/${post.id}`} className={styles.link}>
               {post.title}
             </Link>
           </li>
