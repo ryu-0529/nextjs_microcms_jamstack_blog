@@ -1,37 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Next.js_microcms
 
-## Getting Started
-
-First, run the development server:
-
-```bash
+◆起動
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+◆sdkをインストール
+npm i microcms-js-sdk
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+◆microcmsと紐付けするclientの作成
+メインフォルダ直下にlibsフォルダ作成
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+client.jsファイル作成
 
-## Learn More
+microcmsのAPI設定にあるエンドポイントを貼り付け
+https://【エンドポイントに使用】.microcms.io/api/v1/blog
 
-To learn more about Next.js, take a look at the following resources:
+API KEYは安全な、.env.localファイル作成後にAPI_KEYを作成
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+◆cssのセットについて
+npm i sass
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+◆開発環境のものをビルドする
+npm run build
 
-## Deploy on Vercel
+◆ビルドされたものを確認
+npm run start
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+◆デプロイ（ホスティングサイトvercel）
+→GitHub、GitLab、Bitbucket、Vercel CLI 
+→メールアドレス必要
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# nextjs_microcms_jamstack_blog
+◆デプロイしたblogに新しいblogを追加（Webhook）
+vercelのGit menuからDeploy Hooksを選択し、Create Hookで作成
+→今回はmainで作成するとAPI_KEYが払い出される。
+→microcmsのWebhockに登録
+
+◆参考動画
+https://youtu.be/dNpONz4Yi04?si=wSYBCG11uWXGUBc9
